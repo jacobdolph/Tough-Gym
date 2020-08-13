@@ -4,8 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build",
+    "seed": "node scripts/seedDB.js",
+    "dev": "npm-run-all --parallel start server",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/jacobdolph/Tough-Gym/issues"
   },
-  "homepage": "https://github.com/jacobdolph/Tough-Gym#readme"
+  "homepage": "https://github.com/jacobdolph/Tough-Gym#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.28"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
 }
