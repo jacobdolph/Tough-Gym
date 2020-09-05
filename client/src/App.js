@@ -4,8 +4,9 @@ import { createStructuredSelector } from 'reselect';
 import './App.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container'
-import Navbar from './components/Navbar'
+import Container from 'react-bootstrap/Container';
+import RightSideBar from './components/RightSideBar';
+import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import SignInSignUp from './pages/SignInSignUp';
 
@@ -60,7 +61,7 @@ class App extends Component {
 
 
             </Col>
-            <Col sm='12' md='12' lg='2' style={{ height: '100vh', backgroundColor: 'slategray', position: 'sticky', top: '0' }}><h1>Hello World</h1></Col>
+            <RightSideBar />
           </Row>
         </Container>
       </div >
