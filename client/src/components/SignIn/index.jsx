@@ -14,25 +14,25 @@ class SignIn extends Component {
         }
     }
 
-    // handleSubmit = async e => {
-    //     e.preventDefault();
-    //     const { email, password } = this.state;
+    handleSubmit = async e => {
+        e.preventDefault();
+        const { email, password } = this.state;
 
-    //     try {
-    //         await auth.signInWithEmailAndPassword(email, password);
-    //         this.setState({ email: '', password: '' });
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.setState({ email: '', password: '' });
+        } catch (error) {
+            console.log(error)
+        }
 
 
 
-    // }
+    }
 
-    // handleChange = e => {
-    //     const { value, name } = e.target;
-    //     this.setState({ [name]: value })
-    // }
+    handleChange = e => {
+        const { value, name } = e.target;
+        this.setState({ [name]: value })
+    }
 
     render() {
         return (

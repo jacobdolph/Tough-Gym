@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 import './App.css';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container'
+import Navbar from './components/Navbar'
 import Homepage from './pages/Homepage';
 import SignInSignUp from './pages/SignInSignUp';
 
@@ -10,6 +13,8 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
+
+
 
 
 class App extends Component {
@@ -44,11 +49,21 @@ class App extends Component {
 
     return (
       <div>
-        <Switch>
-          <Route exact path='/' component={Homepage} />
-          <Route exact path='/signin' component={SignInSignUp} />
-        </Switch>
-      </div>
+        <Container fluid >
+          <Row >
+            <Navbar />
+            <Col sm='12' md='12' lg='8'>
+              <Switch>
+                <Route exact path='/' component={Homepage} />
+                <Route exact path='/signin' component={SignInSignUp} />
+              </Switch>
+
+
+            </Col>
+            <Col sm='12' md='12' lg='2' style={{ height: '100vh', backgroundColor: 'slategray', position: 'sticky', top: '0' }}><h1>Hello World</h1></Col>
+          </Row>
+        </Container>
+      </div >
     );
   }
 }
