@@ -1,7 +1,16 @@
 .sign-in-and-sign-up {
-    width: 850px;
+    width: auto;
     display: flex;
     justify-content: space-between;
     margin: 30px auto;
   }
-  
+
+  $breakpoint-tablet: 990px;
+  $breakpoint-laptop: 1024px;
+  @media (max-width: $breakpoint-laptop){
+    .sign-in-and-sign-up {
+    flex-direction: column;
+    width: auto;
+    // margin: 10% 25%;
+    }
+  }

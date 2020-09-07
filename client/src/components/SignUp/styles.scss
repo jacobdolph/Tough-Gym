@@ -8,3 +8,16 @@
     }
   }
   
+  $breakpoint-mobile: 425px;
+  $breakpoint-tablet: 778px;
+  $breakpoint-laptop: 1024px;
+  @media (max-width: $breakpoint-laptop){
+    .sign-up {
+          
+      width: auto;
+      margin: auto;
+      // margin: 10% 25%;
+
+      
+}
+  }

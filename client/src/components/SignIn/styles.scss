@@ -11,3 +11,45 @@
         justify-content: space-between;
     }
 }
+
+$breakpoint-mobile: 425px;
+$breakpoint-tablet: 778px;
+$breakpoint-laptop: 1024px;
+
+  @media (max-width: $breakpoint-laptop){
+      .sign-in {
+          
+          width: auto;
+          margin: auto;
+          // margin: 10% 25%;
+
+          
+    }
+}
+ @media (max-width: $breakpoint-tablet){
+.sign-in {
+              
+    width: auto;
+     // margin: 10% 25%;
+                
+    // .buttons {
+    //     display: flex;
+    //      flex-direction: column;
+                        
+    //  }
+    }
+}
+
+@media (max-width: $breakpoint-mobile){
+    .sign-in {
+              
+        width: auto;
+         // margin: 10% 25%;
+                    
+        .buttons {
+            display: flex;
+             flex-direction: column;
+                            
+         }
+        }
+}
